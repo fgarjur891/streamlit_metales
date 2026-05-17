@@ -18,8 +18,6 @@ Un dashboard analítico robusto, escalable y de alto rendimiento diseñado con *
 * **Diseño Web Fluido (Wide UX):** Maquetación responsive basada en `layout="wide"` con cuadrículas de doble columna analítica (`st.columns`), maximizando el espacio de visualización de gráficos interactivos de **Plotly Express**.
 * **Arquitectura Tolerante a Fallos:** Control exhaustivo de excepciones mediante bloques `try-except` y mitigación de caídas mediante el método seguro `.get()` en diccionarios para evitar errores de tipo `KeyError`.
 
----
-
 ## 🛠️ Stack Tecnológico
 
 * **Lenguaje:** Python 3.9+
@@ -32,3 +30,46 @@ Un dashboard analítico robusto, escalable y de alto rendimiento diseñado con *
 ---
 
 ## 📂 Estructura del Proyecto
+
+```bash
+├── .streamlit/
+│   └── secrets.toml          # Gestión segura de credenciales locales (API Key)
+├── app.py                    # Script principal de la aplicación Streamlit
+├── requirements.txt          # Dependencias de producción del proyecto
+└── README.md                 # Documentación técnica del repositorio
+```
+
+### Parte 3: Guía de Instalación y Comando de Ejecución
+
+## ⚙️ Instalación y Configuración Local
+
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/tu-usuario/dashboard-metales-preciosos.git](https://github.com/tu-usuario/dashboard-metales-preciosos.git)
+cd dashboard-metales-preciosos
+```
+
+### Entorno
+
+```bash
+python -m venv venv
+# En Windows:
+venv\Scripts\activate
+# En macOS/Linux:
+source venv/bin/activate
+```
+
+### Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
+
+### Parte 4: Arquitectura y Cierre del Documento
+
+## 🧠 Aspectos de Diseño de Código Destacados
+
+### Robustez en la Consulta de Diccionarios (Evitando KeyErrors)
+```python
+# Uso estratégico de .get con fallback por defecto
+"cambio": raw.get("chp", 0)
+
